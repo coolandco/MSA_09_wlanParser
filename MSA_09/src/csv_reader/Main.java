@@ -38,33 +38,23 @@ public class Main {
 		
 		//zuerst Finde ich die Anzahl der Unterschiedlichen Macs raus 
 		//und schreibe sie in das MACs Array
-		
 		fülleMacArray();
 		
-//		System.out.println(ad.get(0).get(6)[5]);
-//		for(String s: MACs)
-//		System.out.println(s);
 		
 		//Jetzt wird die Werte Matrix initialisiert:
-		
 		werte = new int[MACs.size()][23*4];
 		
 		
 		//nun müssen die werte in die Tabelle geschrieben werden
 		fülleWerteArray();
 		
-//		
-//		System.out.println(werte[0][0]);
-//		System.out.println(werte[0][1]);
-//		System.out.println(werte[1][0]);
-//		System.out.println(werte[1][1]);
 		
 
 		//nun schreibt man die wertetabelle wieder in eine CSV datei
 		schreibeWerteInDatei(zieldatei);
 		
-
 	}
+	
 
 	private static void schreibeWerteInDatei(File zieldatei) throws IOException {
 	     CSVWriter writer = new CSVWriter(new FileWriter(zieldatei), ';');//öffnet datei
@@ -78,9 +68,6 @@ public class Main {
 	    	 for(int j = 0; j<MACs.size();j++){
 	    		 zeile[j] = String.valueOf(werte[j][i]);
 	    	 }
-	    	 
-//	    	 System.out.println(zeile[0]);
-	    	 
 	    	 
 	    	 writer.writeNext(zeile);
 	     }
@@ -126,9 +113,7 @@ public class Main {
 			}
 		}
 		
-		String s = sBuilder.toString();//in den string um in zu parsen
-		
-//		System.out.println(s);
+		String s = sBuilder.toString();//in den string um in int zu parsen
 		
 		
 		return Integer.parseInt(s);//gibt signalstärke in int zurück
@@ -165,9 +150,8 @@ public class Main {
 		File[] files = quellpfad.listFiles();
 		
 		for(int i = 0; i<files.length; i++){//für jede Datei in diesem verzeichniss
-//			System.out.println(files[i].getPath());
-			 CSVReader reader = new CSVReader(new FileReader(files[i]));
-		     ad.add(reader.readAll());
+			CSVReader reader = new CSVReader(new FileReader(files[i]));
+		    ad.add(reader.readAll());
 		}
 		
 		
