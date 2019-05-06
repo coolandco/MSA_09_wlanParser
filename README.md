@@ -1,6 +1,13 @@
 ## MSA_09_wlanParser
 
-Little script for a WLAN signal strengh positioning system in the course "mobile systems and applications" in fourth semester. The script has to filter the strenghs and Macs. Example data:
+Little java programm for a WLAN signal strengh positioning system in the course "mobile systems and applications" in fourth semester. The script has to filter the strenghs of the APs and Macs.
+
+Input: Path to folder with text files. Each file represents one mesurement point
+Output: 1.          row : all Macs, that are found in the mesurement Points
+        2.,3.,4.... row : strenght of Mac per mesurement point
+
+
+Example input data:
 
 Example file of Mesurement Point 1
 ```
